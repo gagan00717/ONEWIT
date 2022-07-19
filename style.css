@@ -133,7 +133,7 @@ main{
 main .container{
     display: grid;
     grid-template-columns: 18vw auto 20vw;
-    column-gap: 2ren;
+    column-gap: 2rem;
     position: relative;
 }
 
@@ -166,7 +166,7 @@ main .container .left .profile{
     align-items: center;
     height: 4rem;
     cursor: pointer;
-    translate: all 300ms ease;
+    transition: all 300ms ease;
     position: relative;
 }
 
@@ -207,7 +207,7 @@ main .container .left .profile{
     color: var(--color-primary);
 }
 
-.left .sidebar .active::before{
+.left .sidebar .active::before {
     content: "";
     display: block;
     width: 0.5rem;
@@ -234,7 +234,7 @@ main .container .left .profile{
 }
 
 .left .notifications-popup{
-    position: absolute;
+    position:absolute;
     top: 0;
     left: 110%;
     width: 30rem;
@@ -243,10 +243,21 @@ main .container .left .profile{
     padding: var(--card-padding);
     box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);
     z-index: 8;
-    display:none;
+    display: none;
 }
 
-.left .notification-count >div{
+.left .notifications-popup::before{
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    background: var(--color-white);
+    position: absolute;
+    left: -0.6rem;
+    transform: rotate(45deg);
+}
+
+.left .notifications-popup > div{
     display: flex;
     align-items: start;
     gap: 1rem;
@@ -531,9 +542,7 @@ main .container .left .profile{
     gap: 1rem;
 }
 
-.x{
-    color: white;
-}
+
 
 
 .customize-theme{
@@ -558,6 +567,7 @@ main .container .left .profile{
     padding: 3rem;
     border-radius:var(--card-border-radius) ;
     width: 50%;
+    box-shadow:  0 0 1rem var(--color-primary);
 }
 
 .customize-theme .font-size{
@@ -716,6 +726,16 @@ main .container .left .profile{
     .sidebar h3{
         display: none;
     }
+
+    .left .btn{
+        display: none;
+
+    }
+
+    .customize-theme .card{
+        width: 80vw;
+
+    }
     
  }
 
@@ -758,6 +778,258 @@ main .container .left .profile{
  }
 
 }
+.layout__right-sidebar{
+    position: fixed;
+}
+
+.trends-for-you {
+    border-radius: 15px;
+    background: #f5f8fa;
+    margin-bottom: 15px;
+  }
+  
+  .trends-for-you__block {
+    border-bottom: 1px solid #e6ecf0;
+    padding: 10px 15px;
+  }
+  
+  .trends-for-you__block:last-child {
+    border-bottom: none;
+  }
+  
+  .trends-for-you__heading {
+    font-size: 19px;
+    font-weight: bold;
+    color: #14171a;
+  }
+  
+  .trends-for-you__meta-information {
+    font-size: 13px;
+    font-weight: 300;
+    color: #657786;
+  }
+  
+  .trends-for-you__trend-name {
+    font-size: 15px;
+    color: #14171a;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 2px;
+  }
+
+.who-to-follow {
+    background: #f5f8fa;
+    border-radius: 15px;
+  }
+  
+  
+  .who-to-follow__block {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6ecf0;
+  }
+  
+  .who-to-follow__block:last-child {
+    border-bottom: none;
+  }
+  
+  .who-to-follow__author-logo {
+    width: 49px;
+    height: 49px;
+    border-radius: 50px;
+    margin-right: 10px;
+  }
+  
+  .who-to-follow__author-slug {
+    color: #657786;
+    font-size: 15px;
+  }
+  
+  .who-to-follow__author-name {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .who-to-follow__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .who-to-follow__heading {
+    font-size: 19px;
+    font-weight: bold;
+    color: #14171a;
+  }
+  
+  .who-to-follow__button {
+    border: 1px solid #1da0f2;
+    color: #1da0f2;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 15px;
+    padding: 5px;
+    min-width: 67px;
+    text-align: center;
+  }
+  
+  .who-to-follow__button:hover {
+    background: rgba(29, 161, 242, 0.1);
+    cursor: pointer;
+  }
+
+
+  .chat-box{
+    display: none;
+    position: fixed;
+    
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    
+}
+
+.show{
+    display: flex;
+}
+
+.client{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+    background-color: #77b3d4;
+    padding: 15px;
+}
+
+.client img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.client-info{
+    color: #fff;
+    padding:15px;
+
+}
+
+.client-info p{
+    color: #008000;
+    font-weight: bold;
+    font-size:0.8em;
+
+}
+
+.chats{
+    width: 100%;
+    padding: 0 15px;
+    color: #fff;
+    position: relative;
+    font-size: 0.9em;
+
+}
+
+.client-chat{
+    width: 60%;
+    word-wrap: break-word;
+    background-color: #4f5d73c7;
+    padding: 7px 10px;
+    border-radius: 10px 10px 10px 0;
+    margin: 10px 0;
+
+}
+
+.my-chat{
+    width: 60%;
+    word-wrap: break-word;
+    background-color: #77b3d4c7;
+    padding: 7px 10px;
+    border-radius: 10px 10px 10px 0;
+    margin: 5px 0 5px auto;
+}
+
+.chat-input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    background-color: #fff;
+    padding: 15px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+}
+
+.chat-input input{
+    width: 100%;
+    height: 100%;
+    background-color: #4f5d7321;
+    border-radius: 50px;
+    color: #000;
+    font-size: 1.2em;
+    padding: 0 15px;
+}
+
+.send-btn{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+    transition:  0.4s ease-in-out;
+}
+
+.send-btn:active{
+    transform:scale(0.85);
+}
+
+.send-btn img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.chat-btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+}
+
+.chat-btn img{
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    transition: 0.4s ease-in-out;
+}
+
+.chat-btn:hover img{
+    transform: rotate(30deg);
+}
+
+
+
+
 
 
 
