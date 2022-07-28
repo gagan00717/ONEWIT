@@ -1,7 +1,7 @@
  /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(204, 204, 204, 0.525);
   background-color: #f1f1f1;
 }
 
@@ -14,6 +14,7 @@
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  width: 50%;
 }
 
 /* Change background color of buttons on hover */
@@ -32,4 +33,18 @@
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  align-self: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 } 
+.heading{
+  width: fit-content;
+  margin: 10px 0px;
+  font-size: 150%;  
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+p{
+  font-stretch:extra-expanded;
+}
